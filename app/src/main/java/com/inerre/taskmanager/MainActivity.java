@@ -9,10 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
@@ -47,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
         // call check login
         session.checkLogin();
-
     }
 
     /*
