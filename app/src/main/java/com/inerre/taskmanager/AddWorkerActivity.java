@@ -38,7 +38,6 @@ public class AddWorkerActivity extends Activity {
 
         namaWorker = (EditText) findViewById(R.id.editTextNamaWorker);
         passwordWorker = (EditText) findViewById(R.id.editTextPassWorker);
-
     }
 
     /*
@@ -98,9 +97,6 @@ public class AddWorkerActivity extends Activity {
             pDialog.dismiss();
             Toast.makeText(getApplicationContext(), "status: " + status + " message: " + message, Toast.LENGTH_LONG).show();
         }
-
-
-
     }
 
 }

@@ -55,7 +55,6 @@ public class AddProjectActivity extends Activity {
         }else{
             Toast.makeText(getApplicationContext(), "Nama Project tidak boleh kosong", Toast.LENGTH_LONG).show();
         }
-
     }
 
     /*
@@ -101,7 +100,6 @@ public class AddProjectActivity extends Activity {
             pDialog.dismiss();
             Toast.makeText(getApplicationContext(), "status: " + status + " message: " + message, Toast.LENGTH_LONG).show();
         }
-
     }
 
 }
