@@ -18,10 +18,9 @@ public class MainActivity extends AppCompatActivity {
     private ProgressDialog pDialog;
     // Creating JSON Parser object
     APIConnector APICon = new APIConnector();
-    // user JSONArray
-    // JSONArray user = null;
-    EditText etName;
-    EditText etPassword;
+
+    EditText etName; // EditText for name
+    EditText etPassword; // EditText for password
     String resultnull = null;
     private int success;
 
