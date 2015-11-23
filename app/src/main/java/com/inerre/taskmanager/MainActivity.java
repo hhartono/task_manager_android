@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         etName = (EditText) findViewById(R.id.etName);
         etPassword = (EditText) findViewById(R.id.etPassword);
 
+        // call check login
         session.checkLogin();
 
     }
@@ -60,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         }else{
             Toast.makeText(getApplicationContext(), "Nama dan Password tidak boleh kosong", Toast.LENGTH_LONG).show();
         }
-
     }
 
     /*
@@ -68,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
      * Class: Login
      * extends AsyncTask to send user input login
      */
-
     private class Login extends AsyncTask<String, String, String> {
         String uname;
         String password;
@@ -95,11 +94,9 @@ public class MainActivity extends AppCompatActivity {
             String endPointLogin = "user/user_in";
 
             JSONObject json = APICon.checkUser(endPointLogin, uname, password);
-            //Log.d("username: ", etName.getText().toString());
             Log.d("result user: ", json.toString());
 
             try{
-
                 success = json.getInt("status");
                 if(success == 1){
                     String u = json.getString("user");
