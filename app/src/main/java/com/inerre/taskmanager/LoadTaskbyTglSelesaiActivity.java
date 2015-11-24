@@ -48,7 +48,7 @@ public class LoadTaskbyTglSelesaiActivity extends ListActivity {
         setContentView(R.layout.activity_loadtask);
 
         // Hashmap for ListView
-        taskList = new ArrayList<HashMap<String, String>>();
+        taskList = new ArrayList<>();
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
@@ -122,7 +122,7 @@ public class LoadTaskbyTglSelesaiActivity extends ListActivity {
                     String creationDate = c.getString("creation_date");
                     String lastUpdate = c.getString("last_update_timestamp");
 
-                    HashMap<String, String> map = new HashMap<String, String>();
+                    HashMap<String, String> map = new HashMap<>();
                     map.put("id", id);
                     map.put("name", name);
                     map.put("deskripsi", deskripsi);

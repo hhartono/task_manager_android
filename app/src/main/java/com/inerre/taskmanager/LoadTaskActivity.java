@@ -2,8 +2,6 @@ package com.inerre.taskmanager;
 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,11 +10,9 @@ import android.view.MenuItem;
 import android.widget.ListAdapter;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -50,7 +46,7 @@ public class LoadTaskActivity extends ListActivity{
         setContentView(R.layout.activity_loadtask);
 
         // Hashmap for ListView
-        taskList = new ArrayList<HashMap<String, String>>();
+        taskList = new ArrayList<>();
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
@@ -124,7 +120,7 @@ public class LoadTaskActivity extends ListActivity{
                     String creationDate = c.getString("creation_date");
                     String lastUpdate = c.getString("last_update_timestamp");
 
-                    HashMap<String, String> map = new HashMap<String, String>();
+                    HashMap<String, String> map = new HashMap<>();
                     map.put("id", id);
                     map.put("name", name);
                     map.put("deskripsi", deskripsi);

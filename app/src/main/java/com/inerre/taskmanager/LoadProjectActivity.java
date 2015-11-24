@@ -48,21 +48,7 @@ public class LoadProjectActivity extends ListActivity{
         projectList = new ArrayList<>();
 
         new LoadProject().execute();
-
-        // Get listview
-//        ListView lv = getListView();
-
     }
-
-    /*public void onClickLogout(View view){
-        session.Logout();
-        finish();
-    }*/
-
-    /*@Override
-    public void onBackPressed() {
-        finish();
-    }*/
 
     public void onClickAddProject(View view){
         Intent i = new Intent(LoadProjectActivity.this, AddProjectActivity.class);

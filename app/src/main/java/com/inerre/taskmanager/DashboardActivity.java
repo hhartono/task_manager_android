@@ -15,7 +15,6 @@ import java.util.HashMap;
 public class DashboardActivity extends Activity {
 
     SessionManager session;
-    String idWorker;
     HashMap<String, String> hmUser;
 
     @Override
