@@ -87,8 +87,6 @@ public class AddProjectActivity extends Activity {
             try{
                 status = json.getInt("status");
                 message = json.getString("message");
-                /*projectList.clear();
-                updatingData();*/
             } catch (JSONException e){
                 e.printStackTrace();
             }

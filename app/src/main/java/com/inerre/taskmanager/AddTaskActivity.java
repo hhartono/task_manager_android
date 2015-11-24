@@ -41,7 +41,7 @@ public class AddTaskActivity extends Activity {
     final List<KeyPairBoolData> workerList = new ArrayList<>();
 
     HashMap<String, String> mapProject = new HashMap<>();
-    HashMap<String, String> mapWorker = new HashMap<>();
+//    HashMap<String, String> mapWorker = new HashMap<>();
 
     Spinner spinnerProject;
     MultiSpinnerSearch spinnerWorker;
@@ -94,7 +94,7 @@ public class AddTaskActivity extends Activity {
                 }
                 Log.i("list ID ", spinnerWorker.getListID().toString());
                 listID = spinnerWorker.getListID();
-                Toast.makeText(getApplicationContext(), listID.toString(), Toast.LENGTH_LONG).show();
+//                Toast.makeText(getApplicationContext(), listID.toString(), Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -178,13 +178,7 @@ public class AddTaskActivity extends Activity {
                     JSONObject c = projects.getJSONObject(i);
                     String id = c.getString("id");
                     String name = c.getString("nama_project");
-
-                    /*HashMap<String, String> map = new HashMap<>();
-                    map.put("id", id);
-                    map.put("name", name);*/
-
                     mapProject.put(id, name);
-//                    s = new StringWithTag(name, id);
                     projectList.add(new StringWithTag(name, id));
                 }
 
@@ -213,7 +207,7 @@ public class AddTaskActivity extends Activity {
                     String id = c.getString("id");
                     String name = c.getString("nama");
 
-                    mapWorker.put(id, name);
+//                    mapWorker.put(id, name);
 
                     KeyPairBoolData kpb = new KeyPairBoolData();
                     kpb.setId(i+1);
@@ -282,17 +276,11 @@ public class AddTaskActivity extends Activity {
 
         protected void onPostExecute(String file_url){
             pDialog.dismiss();
-
-            Log.d("id worker ; ", lid);
+            Log.d("status : ", String.valueOf(status));
+            Log.d("message : ", message);
+            Log.d("id worker : ", lid);
             Log.d("deskripsi : ", deskripsi);
             Log.d("keterangan : ", keterangan);
-
-            Toast.makeText(getApplicationContext(),
-                            "status: " + status +
-                            "message: " + message +
-                            "id worker: " + lid +
-                            "deskripsi: " + deskripsi +
-                            "keterangan: " + keterangan, Toast.LENGTH_LONG).show();
         }
 
     }
