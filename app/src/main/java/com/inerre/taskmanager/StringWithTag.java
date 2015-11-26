@@ -2,7 +2,7 @@ package com.inerre.taskmanager;
 
 /**
  * Created by root on 11/10/15.
- *
+ * Class StringWithTag
  */
 public class StringWithTag {
     public String string;

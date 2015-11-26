@@ -66,6 +66,10 @@ public class SessionManager {
         editor.commit();
     }
 
+    /*
+     * method checkLogin
+     * check login status
+     */
     public void checkLogin(){
 
         if(this.isLoggedIn()){
@@ -89,8 +93,12 @@ public class SessionManager {
         }
     }
 
+    /*
+     * method getUserData
+     * return user data
+     */
     public HashMap<String, String> getUserData(){
-        HashMap<String, String> user = new HashMap<String, String>();
+        HashMap<String, String> user = new HashMap<>();
         user.put(KEY_IDWORKER, SP.getString(KEY_IDWORKER, null));
         user.put(KEY_IDUSER, SP.getString(KEY_IDUSER, null));
         user.put(KEY_NAME, SP.getString(KEY_NAME, null));
@@ -99,7 +107,7 @@ public class SessionManager {
     }
 
     /*
-     * logout
+     * method Logout
      * clearing all sharedpreferences data
      */
     public void Logout(){
@@ -120,7 +128,7 @@ public class SessionManager {
     }
 
     /*
-     * isLoggedIn
+     * method isLoggedIn
      * check status user, return boolean
      * default value: false
      */
