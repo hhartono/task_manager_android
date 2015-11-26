@@ -54,7 +54,10 @@ public class SessionManager {
         editor = SP.edit();
     }
 
-    // create login session
+    /*
+     * method CreateLoginSession
+     * create login session
+     */
     public void CreateLoginSession(String idworker, String iduser, String name, String status, String password){
         editor.putBoolean(IS_LOGIN, true);
         editor.putString(KEY_IDWORKER, idworker);
@@ -71,7 +74,6 @@ public class SessionManager {
      * check login status
      */
     public void checkLogin(){
-
         if(this.isLoggedIn()){
             // buat flow agar melakukan pengecekan terhadap status user, admin atau worker
             String sts = SP.getString(KEY_STATUS, "worker");
@@ -89,7 +91,6 @@ public class SessionManager {
                 i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 _context.startActivity(i);
             }
-
         }
     }
 
@@ -108,7 +109,7 @@ public class SessionManager {
 
     /*
      * method Logout
-     * clearing all sharedpreferences data
+     * clear all sharedpreferences data
      */
     public void Logout(){
         // clearing all data from SharedPreferences
