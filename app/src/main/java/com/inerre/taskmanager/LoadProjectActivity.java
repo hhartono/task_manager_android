@@ -62,6 +62,10 @@ public class LoadProjectActivity extends ListActivity{
         startActivity(getIntent());
     }
 
+    /*
+     * inner class
+     * LoadProject; load all project
+     */
     class LoadProject extends AsyncTask<String, String, String> {
 
         @Override

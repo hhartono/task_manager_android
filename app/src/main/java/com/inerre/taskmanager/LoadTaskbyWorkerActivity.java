@@ -177,7 +177,7 @@ public class LoadTaskbyWorkerActivity extends ListActivity {
         @Override
         protected void onPostExecute(String url){
             pDialog.dismiss();
-            runOnUiThread(new Runnable() {
+            runOnUiThread(new Runnable()    {
                 @Override
                 public void run() {
 //                    ListAdapter adapter = new SimpleAdapter(
