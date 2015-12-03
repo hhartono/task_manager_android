@@ -31,6 +31,9 @@
         <activity android:name=".LoadTaskbyWorkerActivity"
             android:label="Load Task By Worker">
         </activity>
+        <activity android:name=".LoadTaskbyWorkerAdminActivity"
+            android:label="Load Task By Worker (Admin page)">
+        </activity>
         <activity android:name=".LoadTaskbyCreationDateActivity"
             android:label="Load Task By Creation Date">
         </activity>
@@ -46,6 +49,8 @@
         <activity android:name=".AddTaskActivity"
             android:label="Add Task">
         </activity>
+
+
 
     </application>
 
