@@ -62,10 +62,8 @@ public class LoadTaskbyWorkerActivity extends ListActivity {
 
         String namaUser = hmUser.get("name");
         idWorker = hmUser.get("idWorker");
-//        String statusUser = hmUser.get("status");
 
-//        Toast.makeText(getApplicationContext(), namaUser, Toast.LENGTH_LONG).show();
-//        Toast.makeText(getApplicationContext(), statusUser, Toast.LENGTH_LONG).show();
+//        String statusUser = hmUser.get("status");
 
         TextView tvTitle = (TextView)findViewById(R.id.title_alltask);
         tvTitle.setText("All Task by " + namaUser);
@@ -323,9 +321,5 @@ public class LoadTaskbyWorkerActivity extends ListActivity {
             }
             return view;
         }
-
-        /*public void clearArrayList(){
-            al.clear();
-        }*/
     }
 }
