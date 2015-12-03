@@ -7,8 +7,12 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -44,6 +48,28 @@ public class LoadWorkerActivity extends ListActivity{
         workList = new ArrayList<>();
 
         new LoadWorker().execute();
+
+        ListView lv = getListView();
+
+        /*
+         * click / press listview item
+         */
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String pid = ((TextView) view.findViewById(R.id.pid)).getText().toString();
+                String nameuser = ((TextView) view.findViewById(R.id.name)).getText().toString();
+
+                Intent i = new Intent(LoadWorkerActivity.this, LoadTaskbyWorkerAdminActivity.class);
+                i.putExtra("idworker", pid);
+                i.putExtra("nameuser", nameuser);
+
+                Toast.makeText(getApplicationContext(), "id worker: " + pid + ", name: " + nameuser, Toast.LENGTH_LONG).show();
+
+                LoadWorkerActivity.this.startActivity(i);
+            }
+        });
+
     }
 
     public void onClickAddWorker(View view){
