@@ -163,7 +163,6 @@ public class LoadTaskbyWorkerActivity extends ListActivity {
                     map.put("tgl selesai", tglselesai);
 
                     taskList.add(map);
-
                 }
 
             } catch (JSONException e){
@@ -193,7 +192,6 @@ public class LoadTaskbyWorkerActivity extends ListActivity {
                     setListAdapter(adapter);
                 }
             });
-//            Toast.makeText(getApplicationContext(), "id worker yang login: " + idWorker, Toast.LENGTH_LONG).show();
         }
 
     }
