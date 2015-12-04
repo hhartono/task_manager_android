@@ -40,6 +40,9 @@
         <activity android:name=".LoadTaskbyTglSelesaiActivity"
             android:label="Load Task By Tanggal Selesai Hari ini">
         </activity>
+        <activity android:name=".LoadTaskbyProjectActivity"
+            android:label="Load Task By Project">
+        </activity>
         <activity android:name=".AddProjectActivity"
             android:label="Add Project">
         </activity>
