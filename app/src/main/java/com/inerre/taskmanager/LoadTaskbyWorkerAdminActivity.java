@@ -40,7 +40,7 @@ public class LoadTaskbyWorkerAdminActivity extends ListActivity {
     //arraylist
     ArrayList<HashMap<String, String>> taskList;
     String idWorker;
-    String namaUser;
+    String nameUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,11 +53,11 @@ public class LoadTaskbyWorkerAdminActivity extends ListActivity {
         Bundle extras = getIntent().getExtras();
         if(extras != null){
             idWorker = extras.getString("idworker");
-            namaUser = extras.getString("namauser");
+            nameUser = extras.getString("nameuser");
         }
 
         TextView tvTitle = (TextView)findViewById(R.id.title_alltask);
-        tvTitle.setText("All Task by " + namaUser);
+        tvTitle.setText("All Task by " + nameUser);
 
         new LoadTask().execute();
 
