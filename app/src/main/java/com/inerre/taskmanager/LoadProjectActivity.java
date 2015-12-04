@@ -7,8 +7,12 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -48,6 +52,22 @@ public class LoadProjectActivity extends ListActivity{
         projectList = new ArrayList<>();
 
         new LoadProject().execute();
+
+        ListView lv = getListView();
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String pid = ((TextView) view.findViewById(R.id.pid)).getText().toString();
+
+                Intent i = new Intent(LoadProjectActivity.this, LoadTaskbyProjectActivity.class);
+                i.putExtra("idproject", pid);
+
+                Toast.makeText(getApplicationContext(), "id project: " + pid , Toast.LENGTH_LONG).show();
+
+                LoadProjectActivity.this.startActivity(i);
+            }
+        });
     }
 
     public void onClickAddProject(View view){
