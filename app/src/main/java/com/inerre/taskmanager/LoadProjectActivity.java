@@ -59,9 +59,11 @@ public class LoadProjectActivity extends ListActivity{
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String pid = ((TextView) view.findViewById(R.id.pid)).getText().toString();
+                String nameProject = ((TextView) view.findViewById(R.id.name)).getText().toString();
 
                 Intent i = new Intent(LoadProjectActivity.this, LoadTaskbyProjectActivity.class);
                 i.putExtra("idproject", pid);
+                i.putExtra("nameproject", nameProject);
 
                 Toast.makeText(getApplicationContext(), "id project: " + pid , Toast.LENGTH_LONG).show();
 
