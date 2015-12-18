@@ -37,20 +37,23 @@ public class LoadTaskbyProjectActivity extends ListActivity {
     JSONArray tasks = null;
 
     String idProject;
-
+    String nameProject;
     //arraylist
     ArrayList<HashMap<String, String>> taskList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_loadtask);
-
+        setContentView(R.layout.activity_loadtaskbyproject);
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
             idProject = extras.getString("idproject");
+            nameProject = extras.getString("nameproject");
         }
+
+        TextView tvTitle = (TextView)findViewById(R.id.title_alltask);
+        tvTitle.setText("Task (" + nameProject + ")");
 
         // Hashmap for ListView
         taskList = new ArrayList<>();
@@ -79,6 +82,8 @@ public class LoadTaskbyProjectActivity extends ListActivity {
      */
     class LoadTask extends AsyncTask<String, String, String>{
 
+        private ArrayList<String> listOfWorker = new ArrayList<>();
+
         @Override
         protected void onPreExecute(){
             super.onPreExecute();
@@ -103,23 +108,28 @@ public class LoadTaskbyProjectActivity extends ListActivity {
 
                 for(int i = 0; i < tasks.length(); i++){
                     JSONObject c = tasks.getJSONObject(i);
-                    String id = c.getString("task_id");
-                    String name = c.getString("project");
+
+//                    String idproject = c.getString("project_id");
+//                    String tugas_id = c.getString("tugas_id");
+
+                    String id = c.getString("id");
+//                    String name = c.getString("project");
                     String deskripsi = c.getString("deskripsi");
                     String keterangan = c.getString("keterangan");
                     String creationDate = c.getString("creation_date");
                     String lastUpdate = c.getString("last_update_timestamp");
-                    String tglselesai = c.getString("tanggal_selesai");
+//                    String tglselesai = c.getString("tanggal_selesai");
                     String worker = c.getString("worker");
 
                     HashMap<String, String> map = new HashMap<>();
                     map.put("id", id);
-                    map.put("name", name);
+//                    map.put("name", name);
                     map.put("deskripsi", deskripsi);
                     map.put("keterangan", keterangan);
                     map.put("creation date", creationDate);
                     map.put("last update", lastUpdate);
-                    map.put("tgl selesai", tglselesai);
+//                    map.put("tgl selesai", tglselesai);
+                    map.put("worker", worker);
 
                     taskList.add(map);
                 }
@@ -136,9 +146,9 @@ public class LoadTaskbyProjectActivity extends ListActivity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    TaskAdminAdapter adapter = new TaskAdminAdapter(
+                    SimpleAdapter adapter = new SimpleAdapter(
                             LoadTaskbyProjectActivity.this, taskList,
-                            R.layout.list_item_taskbyworker,
+                            R.layout.list_item_taskbyproject,
                             new String[]{"id", "deskripsi", "name", "keterangan", "tgl selesai"},
                             new int[]{R.id.pid, R.id.deskripsi, R.id.name, R.id.keterangan, R.id.tglselesai}
                     );
@@ -149,7 +159,7 @@ public class LoadTaskbyProjectActivity extends ListActivity {
 
     }
 
-    class TaskAdminAdapter extends SimpleAdapter {
+    /*class TaskAdminAdapter extends SimpleAdapter {
         private ArrayList<HashMap<String, String>> al;
 
         public TaskAdminAdapter(Context context, ArrayList<HashMap<String, String>> items, int resource, String[] from, int[] to){
@@ -170,6 +180,6 @@ public class LoadTaskbyProjectActivity extends ListActivity {
             }
             return view;
         }
-    }
+    }*/
 
 }
