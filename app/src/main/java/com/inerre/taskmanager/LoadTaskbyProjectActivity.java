@@ -129,7 +129,7 @@ public class LoadTaskbyProjectActivity extends ListActivity {
                     map.put("creation date", creationDate);
                     map.put("last update", lastUpdate);
 //                    map.put("tgl selesai", tglselesai);
-                    map.put("worker", worker);
+                    map.put("worker", "worker : "+worker);
 
                     taskList.add(map);
                 }
@@ -149,8 +149,8 @@ public class LoadTaskbyProjectActivity extends ListActivity {
                     SimpleAdapter adapter = new SimpleAdapter(
                             LoadTaskbyProjectActivity.this, taskList,
                             R.layout.list_item_taskbyproject,
-                            new String[]{"id", "deskripsi", "name", "keterangan", "tgl selesai"},
-                            new int[]{R.id.pid, R.id.deskripsi, R.id.name, R.id.keterangan, R.id.tglselesai}
+                            new String[]{"id", "deskripsi", "name", "keterangan", "tgl selesai", "worker"},
+                            new int[]{R.id.pid, R.id.deskripsi, R.id.name, R.id.keterangan, R.id.tglselesai, R.id.namaWorker}
                     );
                     setListAdapter(adapter);
                 }
