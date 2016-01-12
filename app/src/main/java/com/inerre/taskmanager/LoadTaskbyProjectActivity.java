@@ -113,22 +113,22 @@ public class LoadTaskbyProjectActivity extends ListActivity {
 //                    String tugas_id = c.getString("tugas_id");
 
                     String id = c.getString("id");
-//                    String name = c.getString("project");
+                    //String name = c.getString("project");
                     String deskripsi = c.getString("deskripsi");
                     String keterangan = c.getString("keterangan");
                     String creationDate = c.getString("creation_date");
                     String lastUpdate = c.getString("last_update_timestamp");
-//                    String tglselesai = c.getString("tanggal_selesai");
+                    String tglselesai = c.getString("tanggal_selesai");
                     String worker = c.getString("worker");
 
                     HashMap<String, String> map = new HashMap<>();
                     map.put("id", id);
-//                    map.put("name", name);
+                    //map.put("name", name);
                     map.put("deskripsi", deskripsi);
                     map.put("keterangan", keterangan);
                     map.put("creation date", creationDate);
                     map.put("last update", lastUpdate);
-//                    map.put("tgl selesai", tglselesai);
+                    map.put("tgl selesai", tglselesai);
                     map.put("worker", "worker : "+worker);
 
                     taskList.add(map);
@@ -146,7 +146,14 @@ public class LoadTaskbyProjectActivity extends ListActivity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    SimpleAdapter adapter = new SimpleAdapter(
+                    /*SimpleAdapter adapter = new SimpleAdapter(
+                            LoadTaskbyProjectActivity.this, taskList,
+                            R.layout.list_item_taskbyproject,
+                            new String[]{"id", "deskripsi", "name", "keterangan", "tgl selesai", "worker"},
+                            new int[]{R.id.pid, R.id.deskripsi, R.id.name, R.id.keterangan, R.id.tglselesai, R.id.namaWorker}
+                    );*/
+
+                    TaskAdminAdapter adapter = new TaskAdminAdapter(
                             LoadTaskbyProjectActivity.this, taskList,
                             R.layout.list_item_taskbyproject,
                             new String[]{"id", "deskripsi", "name", "keterangan", "tgl selesai", "worker"},
@@ -159,7 +166,7 @@ public class LoadTaskbyProjectActivity extends ListActivity {
 
     }
 
-    /*class TaskAdminAdapter extends SimpleAdapter {
+    class TaskAdminAdapter extends SimpleAdapter {
         private ArrayList<HashMap<String, String>> al;
 
         public TaskAdminAdapter(Context context, ArrayList<HashMap<String, String>> items, int resource, String[] from, int[] to){
@@ -180,6 +187,6 @@ public class LoadTaskbyProjectActivity extends ListActivity {
             }
             return view;
         }
-    }*/
+    }
 
 }
