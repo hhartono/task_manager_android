@@ -70,7 +70,7 @@ public class LoadTaskbyWorkerAdminActivity extends ListActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String pid = ((TextView) view.findViewById(R.id.pid)).getText().toString();
-                Toast.makeText(getApplicationContext(), "item yang pilih nomor: " + pid, Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(), "item yang pilih nomor: " + pid, Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -113,8 +113,8 @@ public class LoadTaskbyWorkerAdminActivity extends ListActivity {
                     HashMap<String, String> map = new HashMap<>();
                     map.put("id", id);
                     map.put("name", name);
-                    map.put("deskripsi", deskripsi);
-                    map.put("keterangan", keterangan);
+                    map.put("deskripsi", "Deskripsi : "+deskripsi);
+                    map.put("keterangan", "Keterangan : "+keterangan);
                     map.put("creation date", creationDate);
                     map.put("last update", lastUpdate);
                     map.put("tgl selesai", tglselesai);

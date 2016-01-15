@@ -69,7 +69,7 @@ public class LoadTaskbyProjectActivity extends ListActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String pid = ((TextView) view.findViewById(R.id.pid)).getText().toString();
-                Toast.makeText(getApplicationContext(), "item yang pilih nomor: " + pid, Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(), "item yang pilih nomor: " + pid, Toast.LENGTH_LONG).show();
             }
         });
 
@@ -120,16 +120,18 @@ public class LoadTaskbyProjectActivity extends ListActivity {
                     String lastUpdate = c.getString("last_update_timestamp");
                     String tglselesai = c.getString("tanggal_selesai");
                     String worker = c.getString("worker");
+                    String selesai = c.getString("selesai");
 
                     HashMap<String, String> map = new HashMap<>();
                     map.put("id", id);
                     //map.put("name", name);
-                    map.put("deskripsi", deskripsi);
-                    map.put("keterangan", keterangan);
+                    map.put("deskripsi","Deskripsi : "+deskripsi);
+                    map.put("keterangan","Keterangan : "+keterangan);
                     map.put("creation date", creationDate);
                     map.put("last update", lastUpdate);
                     map.put("tgl selesai", tglselesai);
-                    map.put("worker", "worker : "+worker);
+                    map.put("worker", "Pekerja : "+worker);
+                    map.put("selesai", "Sudah Selesai : "+selesai);
 
                     taskList.add(map);
                 }
@@ -156,8 +158,8 @@ public class LoadTaskbyProjectActivity extends ListActivity {
                     TaskAdminAdapter adapter = new TaskAdminAdapter(
                             LoadTaskbyProjectActivity.this, taskList,
                             R.layout.list_item_taskbyproject,
-                            new String[]{"id", "deskripsi", "name", "keterangan", "tgl selesai", "worker"},
-                            new int[]{R.id.pid, R.id.deskripsi, R.id.name, R.id.keterangan, R.id.tglselesai, R.id.namaWorker}
+                            new String[]{"id", "deskripsi", "name", "keterangan", "tgl selesai", "worker", "selesai"},
+                            new int[]{R.id.pid, R.id.deskripsi, R.id.name, R.id.keterangan, R.id.tglselesai, R.id.namaWorker, R.id.namaSelesai}
                     );
                     setListAdapter(adapter);
                 }
@@ -180,7 +182,7 @@ public class LoadTaskbyProjectActivity extends ListActivity {
             HashMap<String, String> task = al.get(position);
             String ts = task.get("tgl selesai");
 
-            if(ts.equals("0000-00-00")){
+            if(ts.equals("0")){
                 view.setBackgroundColor(0xffffffff);
             }else{
                 view.setBackgroundColor(0x30ff2020);

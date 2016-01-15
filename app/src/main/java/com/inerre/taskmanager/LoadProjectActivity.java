@@ -65,7 +65,7 @@ public class LoadProjectActivity extends ListActivity{
                 i.putExtra("idproject", pid);
                 i.putExtra("nameproject", nameProject);
 
-                Toast.makeText(getApplicationContext(), "id project: " + pid , Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(), "id project: " + pid , Toast.LENGTH_LONG).show();
 
                 LoadProjectActivity.this.startActivity(i);
             }
@@ -121,7 +121,7 @@ public class LoadProjectActivity extends ListActivity{
                     HashMap<String, String> map = new HashMap<>();
                     map.put("id", id);
                     map.put("name", name);
-                    map.put("creation date", creationDate);
+                    map.put("creation date", "Tanggal : "+ creationDate);
                     map.put("last update", lastUpdate);
 
                     projectList.add(map);
