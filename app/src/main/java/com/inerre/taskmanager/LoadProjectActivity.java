@@ -121,7 +121,7 @@ public class LoadProjectActivity extends ListActivity{
                     HashMap<String, String> map = new HashMap<>();
                     map.put("id", id);
                     map.put("name", name);
-                    map.put("creation date", "Tanggal : "+ creationDate);
+                    map.put("creation date", "Dibuat Tanggal : "+ creationDate);
                     map.put("last update", lastUpdate);
 
                     projectList.add(map);
